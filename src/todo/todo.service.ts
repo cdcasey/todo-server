@@ -15,11 +15,15 @@ export class TodoService {
   }
 
   findAll() {
-    return `This action returns all todo`;
+    return this.todos;
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} todo`;
+    if (id > this.todos.length) {
+      // return 'Todo not found';
+      throw new Error('Todo not found');
+    }
+    return this.todos[id - 1];
   }
 
   update(id: number, updateTodoDto: UpdateTodoDto) {

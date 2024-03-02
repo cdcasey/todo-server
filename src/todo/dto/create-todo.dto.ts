@@ -1,1 +1,6 @@
-export class CreateTodoDto {}
+export class CreateTodoDto {
+  id: number;
+  title: string;
+  description: string;
+  completed: boolean;
+}
